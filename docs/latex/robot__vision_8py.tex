@@ -1,0 +1,140 @@
+\hypertarget{robot__vision_8py}{}\doxysection{scripts/robot\+\_\+vision.py File Reference}
+\label{robot__vision_8py}\index{scripts/robot\_vision.py@{scripts/robot\_vision.py}}
+
+
+this file implements \textquotesingle{}the eyes\textquotesingle{} of the robot  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{robot__vision_8py_a5828512a24abca3e557d9d38f1e4c3c8}{robot\+\_\+vision.\+cam1\+\_\+new\+Id}} (new\+\_\+id)
+\begin{DoxyCompactList}\small\item\em cam1\+\_\+new\+Id \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__vision_8py_a61367928e434056430cd2ace8465606b}{robot\+\_\+vision.\+cam2\+\_\+new\+Id}} (new\+\_\+id)
+\begin{DoxyCompactList}\small\item\em cam2\+\_\+new\+Id \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__vision_8py_a09a275501c95866fa4a871aa8d35f4aa}{robot\+\_\+vision.\+cam3\+\_\+new\+Id}} (new\+\_\+id)
+\begin{DoxyCompactList}\small\item\em cam3\+\_\+new\+Id \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__vision_8py_aec4f01165dd072c563c1e6fe965ebb9c}{robot\+\_\+vision.\+main}} ()
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__vision_8py_a2058b2a60b43eec323c8bece62f2f234}\label{robot__vision_8py_a2058b2a60b43eec323c8bece62f2f234}} 
+list {\bfseries robot\+\_\+vision.\+id\+\_\+list} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{robot__vision_8py_a94f85bbf34709c93e1ec985f2224ddd0}\label{robot__vision_8py_a94f85bbf34709c93e1ec985f2224ddd0}} 
+{\bfseries robot\+\_\+vision.\+oracle\+\_\+service} = None
+\item 
+\mbox{\Hypertarget{robot__vision_8py_aae88663e7ac898ee20c71f8989d163e2}\label{robot__vision_8py_aae88663e7ac898ee20c71f8989d163e2}} 
+{\bfseries robot\+\_\+vision.\+pub\+\_\+hint} = rospy.\+Publisher(\textquotesingle{}/new\+\_\+hint\textquotesingle{}, New\+Hint, queue\+\_\+size = 10)
+\item 
+\mbox{\Hypertarget{robot__vision_8py_a4a25f0751b39946e640918b5bfb33bea}\label{robot__vision_8py_a4a25f0751b39946e640918b5bfb33bea}} 
+int {\bfseries robot\+\_\+vision.\+c\+\_\+tot} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this file implements \textquotesingle{}the eyes\textquotesingle{} of the robot 
+
+\begin{DoxyAuthor}{Author}
+Gianluca Piquet 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30/09/2022
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /camera1\+\_\+publish/camera1\+\_\+found\+\_\+id /camera2\+\_\+publish/camera2\+\_\+found\+\_\+id /camera3\+\_\+publish/camera3\+\_\+found\+\_\+id
+
+Publishes to\+: ~\newline
+ /new\+\_\+hint
+
+Services\+: ~\newline
+ ~\newline
+
+
+Action Services\+: ~\newline
+
+
+Client Services\+: ~\newline
+ /oracle\+\_\+hint
+
+Description\+: ~\newline
+ This file implements vision of the robot, here in fact are implemented 3 functions related to the three cameras on the robot that allow the acquisition of hints 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{robot__vision_8py_a5828512a24abca3e557d9d38f1e4c3c8}\label{robot__vision_8py_a5828512a24abca3e557d9d38f1e4c3c8}} 
+\index{robot\_vision.py@{robot\_vision.py}!cam1\_newId@{cam1\_newId}}
+\index{cam1\_newId@{cam1\_newId}!robot\_vision.py@{robot\_vision.py}}
+\doxysubsubsection{\texorpdfstring{cam1\_newId()}{cam1\_newId()}}
+{\footnotesize\ttfamily def robot\+\_\+vision.\+cam1\+\_\+new\+Id (\begin{DoxyParamCaption}\item[{}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+cam1\+\_\+new\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & new\+\_\+id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+:
+\end{DoxyReturn}
+This function takes from the topic /camera1\+\_\+publisher/camera1\+\_\+found\+\_\+id the value of the id corresponded to the marker detected by camera1 and uses it to ask the topic /oracle\+\_\+hint which hints the id found corresponds to. This message is then processed and turned into a unique string that is posted to the topic /new\+\_\+hint \mbox{\Hypertarget{robot__vision_8py_a61367928e434056430cd2ace8465606b}\label{robot__vision_8py_a61367928e434056430cd2ace8465606b}} 
+\index{robot\_vision.py@{robot\_vision.py}!cam2\_newId@{cam2\_newId}}
+\index{cam2\_newId@{cam2\_newId}!robot\_vision.py@{robot\_vision.py}}
+\doxysubsubsection{\texorpdfstring{cam2\_newId()}{cam2\_newId()}}
+{\footnotesize\ttfamily def robot\+\_\+vision.\+cam2\+\_\+new\+Id (\begin{DoxyParamCaption}\item[{}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+cam2\+\_\+new\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & new\+\_\+id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+:
+\end{DoxyReturn}
+This function takes from the topic /camera2\+\_\+publisher/camera2\+\_\+found\+\_\+id the value of the id corresponded to the marker detected by camera2 and uses it to ask the topic /oracle\+\_\+hint which hints the id found corresponds to. This message is then processed and turned into a unique string that is posted to the topic /new\+\_\+hint \mbox{\Hypertarget{robot__vision_8py_a09a275501c95866fa4a871aa8d35f4aa}\label{robot__vision_8py_a09a275501c95866fa4a871aa8d35f4aa}} 
+\index{robot\_vision.py@{robot\_vision.py}!cam3\_newId@{cam3\_newId}}
+\index{cam3\_newId@{cam3\_newId}!robot\_vision.py@{robot\_vision.py}}
+\doxysubsubsection{\texorpdfstring{cam3\_newId()}{cam3\_newId()}}
+{\footnotesize\ttfamily def robot\+\_\+vision.\+cam3\+\_\+new\+Id (\begin{DoxyParamCaption}\item[{}]{new\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+cam3\+\_\+new\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & new\+\_\+id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+:
+\end{DoxyReturn}
+This function takes from the topic /camera3\+\_\+publisher/camera3\+\_\+found\+\_\+id the value of the id corresponded to the marker detected by camera3 and uses it to ask the topic /oracle\+\_\+hint which hints the id found corresponds to. This message is then processed and turned into a unique string that is posted to the topic /new\+\_\+hint \mbox{\Hypertarget{robot__vision_8py_aec4f01165dd072c563c1e6fe965ebb9c}\label{robot__vision_8py_aec4f01165dd072c563c1e6fe965ebb9c}} 
+\index{robot\_vision.py@{robot\_vision.py}!main@{main}}
+\index{main@{main}!robot\_vision.py@{robot\_vision.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def robot\+\_\+vision.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+main function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+:
+\end{DoxyReturn}
+This function initialise the node and all the pub/sub and clients 

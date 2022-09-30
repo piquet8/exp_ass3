@@ -1,0 +1,261 @@
+\hypertarget{robot__fsm_8py}{}\doxysection{scripts/robot\+\_\+fsm.py File Reference}
+\label{robot__fsm_8py}\index{scripts/robot\_fsm.py@{scripts/robot\_fsm.py}}
+
+
+this file implements the finite state machine that controls the robot behavior  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{robot__fsm_8py_a789437c7859eec535d30cfeb20353dec}{robot\+\_\+fsm.\+turn\+\_\+around}} ()
+\begin{DoxyCompactList}\small\item\em turn\+\_\+around function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_adb7574d26549fbc40afd770087d1d171}{robot\+\_\+fsm.\+cancel\+\_\+function}} ()
+\begin{DoxyCompactList}\small\item\em cancel\+\_\+function function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_ae1d41e203e4b41a59ea8a3879cac0c7c}{robot\+\_\+fsm.\+goto\+\_\+room}} ()
+\begin{DoxyCompactList}\small\item\em goto\+\_\+room function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_ab9586f91881f2c313345846d64802a21}{robot\+\_\+fsm.\+look\+\_\+around}} ()
+\begin{DoxyCompactList}\small\item\em look\+\_\+around function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_aab0b3d87a1b86e9d661e755cc33d3505}{robot\+\_\+fsm.\+check\+\_\+hyp}} (hyp)
+\begin{DoxyCompactList}\small\item\em check\+\_\+hyp function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_a23b57c231377b2ff6f7464f1d5e6b074}{robot\+\_\+fsm.\+go\+\_\+home}} ()
+\begin{DoxyCompactList}\small\item\em go\+\_\+home function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_a5c1d2fe9fc53db6980bff4a5989f214a}{robot\+\_\+fsm.\+check\+\_\+win}} ()
+\begin{DoxyCompactList}\small\item\em check\+\_\+win function \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{robot__fsm_8py_ad4fa92402f674321b3875bc974d30a3f}{robot\+\_\+fsm.\+main}} ()
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_aa76861b82e8e726bb5915ee9a7378049}\label{robot__fsm_8py_aa76861b82e8e726bb5915ee9a7378049}} 
+int {\bfseries robot\+\_\+fsm.\+finish\+\_\+game} = 0
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a876ec3614ab20d66d79fd02255e9cf9a}\label{robot__fsm_8py_a876ec3614ab20d66d79fd02255e9cf9a}} 
+{\bfseries robot\+\_\+fsm.\+goal} = Move\+Base\+Goal()
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_ac481d1909e8be826cefed5662deadf45}\label{robot__fsm_8py_ac481d1909e8be826cefed5662deadf45}} 
+{\bfseries robot\+\_\+fsm.\+client} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a73c783d5fc0e6dcf2176beb3c2027608}\label{robot__fsm_8py_a73c783d5fc0e6dcf2176beb3c2027608}} 
+list {\bfseries robot\+\_\+fsm.\+rooms} = \mbox{[} \mbox{[}-\/4,-\/3\mbox{]},\mbox{[}-\/4,2\mbox{]},\mbox{[}-\/1,7.\+5\mbox{]},\mbox{[}5,-\/7\mbox{]},\mbox{[}5,-\/3\mbox{]}, \mbox{[}4,1\mbox{]}\mbox{]}
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_abba0e406fdf11c2982aa39a4b3685012}\label{robot__fsm_8py_abba0e406fdf11c2982aa39a4b3685012}} 
+list {\bfseries robot\+\_\+fsm.\+visited} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a456e7445a48f4cd4476b5c5b3248158e}\label{robot__fsm_8py_a456e7445a48f4cd4476b5c5b3248158e}} 
+{\bfseries robot\+\_\+fsm.\+pub\+\_\+} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a14a1bb6243d1594f293aaeb6417e1cac}\label{robot__fsm_8py_a14a1bb6243d1594f293aaeb6417e1cac}} 
+int {\bfseries robot\+\_\+fsm.\+state} = 1
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_adc872761e3b947b5a0e9fe18885352a0}\label{robot__fsm_8py_adc872761e3b947b5a0e9fe18885352a0}} 
+bool {\bfseries robot\+\_\+fsm.\+ready} = False
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a62b059eb14676da17f7c4c6086370d9d}\label{robot__fsm_8py_a62b059eb14676da17f7c4c6086370d9d}} 
+int {\bfseries robot\+\_\+fsm.\+start} = 0
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a6300afa4ce1382052c3b4c400dfc5d20}\label{robot__fsm_8py_a6300afa4ce1382052c3b4c400dfc5d20}} 
+{\bfseries robot\+\_\+fsm.\+id} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_aa1866a78f06306259db6f8f3959205c8}\label{robot__fsm_8py_aa1866a78f06306259db6f8f3959205c8}} 
+{\bfseries robot\+\_\+fsm.\+who} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a7176bfb608539d6d9f20777a9dd2a265}\label{robot__fsm_8py_a7176bfb608539d6d9f20777a9dd2a265}} 
+{\bfseries robot\+\_\+fsm.\+what} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_aa83482679975f37c665db7fa23f67d4c}\label{robot__fsm_8py_aa83482679975f37c665db7fa23f67d4c}} 
+{\bfseries robot\+\_\+fsm.\+where} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a93bece42ed4858d4f741a00cf371af23}\label{robot__fsm_8py_a93bece42ed4858d4f741a00cf371af23}} 
+{\bfseries robot\+\_\+fsm.\+move\+\_\+arm} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a982834b6cd1dfe734aab170ec1366fb7}\label{robot__fsm_8py_a982834b6cd1dfe734aab170ec1366fb7}} 
+{\bfseries robot\+\_\+fsm.\+room\+\_\+name} = None
+\item 
+\mbox{\Hypertarget{robot__fsm_8py_a1a24fa130439d6523618a4d92f840e4d}\label{robot__fsm_8py_a1a24fa130439d6523618a4d92f840e4d}} 
+int {\bfseries robot\+\_\+fsm.\+n\+\_\+room} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this file implements the finite state machine that controls the robot behavior 
+
+\begin{DoxyAuthor}{Author}
+Gianluca Piquet 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30/09/2022
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /hypothesis
+
+Publishes to\+: ~\newline
+ /cmd\+\_\+vel
+
+Services\+: ~\newline
+ ~\newline
+
+
+Action Services\+: ~\newline
+ move\+\_\+base
+
+Client Services\+: ~\newline
+ /oracle\+\_\+solution
+
+Description\+: ~\newline
+ In this function the finite state machine that controls the behavior of the robot is implemented, specifically there are three states\+:
+\begin{DoxyItemize}
+\item state 0 -\/$>$ goto\+\_\+room\+: in this state we have the robot moving from one room to another, the room is chosen randomly and its coordinates are set as the goal for the move\+\_\+base module. The function is designed so that all rooms are seen randomly at each turn. When the robot reaches the room it switches to state 1
+\item state 1 -\/$>$ look\+\_\+around\+: in this state the robot is inside the room and performs certain maneuvers to search for clues around it, if the room is small the robot just turns on itself 360 degrees, if on the other hand the room is large the robot in addition to turning on itself moves to different points in the room. When the robot finishes the search if no hypothesis has been found I switch back to state 0
+\item state 2 -\/$>$ go\+\_\+home in this last state the robot has found a complete hypothesis to test, it then goes to the home position and states its hypothesis to check if it is the correct one. If the hypothesis is correct the game ends otherwise the robot resumes the search returning to state 0 In both state 0 and state 1 if a complete hypothesis is detected the robot goes directly to state 2 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{robot__fsm_8py_adb7574d26549fbc40afd770087d1d171}\label{robot__fsm_8py_adb7574d26549fbc40afd770087d1d171}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!cancel\_function@{cancel\_function}}
+\index{cancel\_function@{cancel\_function}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{cancel\_function()}{cancel\_function()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+cancel\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+cancel\+\_\+function function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function its called when a new hypothesis is ready, it cancels the current goal and set the valute of the state to 2 \mbox{\Hypertarget{robot__fsm_8py_aab0b3d87a1b86e9d661e755cc33d3505}\label{robot__fsm_8py_aab0b3d87a1b86e9d661e755cc33d3505}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!check\_hyp@{check\_hyp}}
+\index{check\_hyp@{check\_hyp}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{check\_hyp()}{check\_hyp()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+check\+\_\+hyp (\begin{DoxyParamCaption}\item[{}]{hyp }\end{DoxyParamCaption})}
+
+
+
+check\+\_\+hyp function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & hyp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function takes from the topic /oracle\+\_\+hint the information about the detected hints and assigns it to the corresponding variables \mbox{\Hypertarget{robot__fsm_8py_a5c1d2fe9fc53db6980bff4a5989f214a}\label{robot__fsm_8py_a5c1d2fe9fc53db6980bff4a5989f214a}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!check\_win@{check\_win}}
+\index{check\_win@{check\_win}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{check\_win()}{check\_win()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+check\+\_\+win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+check\+\_\+win function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function checks whether the hypothesis found is the winning hypothesis \mbox{\Hypertarget{robot__fsm_8py_a23b57c231377b2ff6f7464f1d5e6b074}\label{robot__fsm_8py_a23b57c231377b2ff6f7464f1d5e6b074}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!go\_home@{go\_home}}
+\index{go\_home@{go\_home}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{go\_home()}{go\_home()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+go\+\_\+home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+go\+\_\+home function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function moves the robot into the home to test its hypothesis \mbox{\Hypertarget{robot__fsm_8py_ae1d41e203e4b41a59ea8a3879cac0c7c}\label{robot__fsm_8py_ae1d41e203e4b41a59ea8a3879cac0c7c}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!goto\_room@{goto\_room}}
+\index{goto\_room@{goto\_room}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{goto\_room()}{goto\_room()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+goto\+\_\+room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+goto\+\_\+room function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function allows the robot to move from room to another one by randomly generating the room to be reached \mbox{\Hypertarget{robot__fsm_8py_ab9586f91881f2c313345846d64802a21}\label{robot__fsm_8py_ab9586f91881f2c313345846d64802a21}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!look\_around@{look\_around}}
+\index{look\_around@{look\_around}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{look\_around()}{look\_around()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+look\+\_\+around (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+look\+\_\+around function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function deals with room scouting, it implements different movements and behaviors according to the room the robot is in \mbox{\Hypertarget{robot__fsm_8py_ad4fa92402f674321b3875bc974d30a3f}\label{robot__fsm_8py_ad4fa92402f674321b3875bc974d30a3f}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!main@{main}}
+\index{main@{main}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+main function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function initilise the node and the relative sub/pub and clients \mbox{\Hypertarget{robot__fsm_8py_a789437c7859eec535d30cfeb20353dec}\label{robot__fsm_8py_a789437c7859eec535d30cfeb20353dec}} 
+\index{robot\_fsm.py@{robot\_fsm.py}!turn\_around@{turn\_around}}
+\index{turn\_around@{turn\_around}!robot\_fsm.py@{robot\_fsm.py}}
+\doxysubsubsection{\texorpdfstring{turn\_around()}{turn\_around()}}
+{\footnotesize\ttfamily def robot\+\_\+fsm.\+turn\+\_\+around (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+turn\+\_\+around function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function implements the rotation of the robot on its z axis 
