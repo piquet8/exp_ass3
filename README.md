@@ -44,7 +44,7 @@ The assignment requires:
 
 [simulation.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/simulation.cpp)
 
-*If you need you can find a more accurate description of the nodes used in the documentation* [docs]
+*If you need you can find a more accurate description of the nodes used in the documentation* [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
 
 ## Messages
 [NewHint](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHint.msg)
@@ -89,7 +89,7 @@ After that you need to build the package in the workspace: *catkin_make --only-p
 ## System's technical improvements
 
 # Specific link to folders  
-- Here you can find the documentation: [docs]
+- Here you can find the documentation: [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
 - Here you can find the media and diagram file: [media and diagram](https://github.com/piquet8/exp_ass3/tree/main/media_exp3)
 
 # Authors and contacts
