@@ -53,11 +53,11 @@ The next three nodes, are a variant of this node [marker_publish.cpp](https://gi
 *If you need you can find a more accurate description of the nodes used in the documentation* [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
 
 ## Messages
-[NewHint.msg](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHint.msg): this message contains the hint taken by the robot redesigned to be more readable in only one string, it is publish on the /new_hint topic
+[NewHint.msg](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHint.msg): this message contains the hint taken by the robot redesigned to be more readable in only one string, it is publish on the `/new_hint` topic
 
-[NewHyp.msg](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHyp.msg): this message contains the hypothesis complete, it is publish on the /hypothesis topic
+[NewHyp.msg](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHyp.msg): this message contains the hypothesis complete, it is publish on the `/hypothesis` topic
 ## Services
-[Marker.srv](https://github.com/piquet8/exp_ass3/blob/main/srv/Marker.srv): this service takes as request the value of the id corresponding to the detected marker and provides as response the corresponding hint which is in turn taken from the message *ErlOracle.msg* present in the package [erl2](https://github.com/CarmineD8/erl2/tree/main/msg)
+[Marker.srv](https://github.com/piquet8/exp_ass3/blob/main/srv/Marker.srv): this service takes as request the value of the id corresponding to the detected marker and provides as response the corresponding hint which is taken from the message *ErlOracle.msg* present in the package [erl2](https://github.com/CarmineD8/erl2/tree/main/msg); to call the service we can use `/oracle_hint`
 
 ## Urdf model
 [robot.urdf](https://github.com/piquet8/exp_ass3/blob/main/urdf/robot9.urdf): this file contains the model of the robot
