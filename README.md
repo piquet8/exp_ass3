@@ -33,6 +33,10 @@ The assignment requires:
 ## Urdf model
 
 ## UML
+![UML_exp3](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/UML_exp3.png)
+
+## States diagram
+![states_diagram](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/blocks_diagram.png)
 
 ## Rqt-graph
 
