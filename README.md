@@ -1,9 +1,9 @@
 # Experimental Robotics Laboratory - Assignment 3
-This project implements a simplified version of the game Cluedo, in which a robot moves around inside a square arena searching for hints to find the murderer, the weapon, and the location of the crime.
+This project implements a simplified version of the game Cluedo, in which a robot moves within a complex environment consisting of several rooms searching for hints to find the murderer, the weapon, and the location of the crime.
 
-The hints are placed above the arena walls placed in the center of the four walls at corresponding waypoints and at different heights (0.75 and 1.25) that change each time the simulation is launched. To acquire the clues, the robot will have to reach for the different wayponints and use its arm to pick them up.
+The hints are inside 30 ArUco markers (5 for each room) that can be placed in different locations within the rooms: above the wall, at the base of the wall, or on the floor. To acquire the hints, the robot will have to move around the different rooms and use its camera to detect the different markers.
 
-When the robot, after collecting a sufficient number of clues, finds a complete and consistent hypothesis, it reaches the central location and tells its hypothesis. If the hypothesis is the winning one, the game ends otherwise the robot resumes the search.
+When the robot, after collecting a sufficient number of hints, finds a complete and consistent hypothesis, it reaches the home position and communicates its hypothesis. If the hypothesis is the winning one, the game ends, otherwise the robot resumes the search.
 
 ARENA - from gazebo 
 
@@ -11,9 +11,17 @@ ARENA - from gazebo
 
 ## Expected Behaviour
 The robot should:
+- moving between different rooms while obviously avoiding hitting the walls
+- detect the different ArUco markers placed at different locations within the rooms to obtain hints
+- when a consistent hypothesis is deducible, it should go the center of the arena and express it in English
+- if the hypothesis is wrong, it should keep exploring and find new hints
 
 ## Features of the project
 The assignment requires:
+- use **ArUco** to detect markers that contain the hints
+- use functionalities such as **mapping, path planning and following** to allow the robot to move between rooms
+- modify the robot model with **multiple sensors, movable joints, etc.** to enable it to detect markers
+
 
 # How it works
 
