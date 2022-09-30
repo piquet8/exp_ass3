@@ -38,7 +38,7 @@ The assignment requires:
 
 - **state 2** *go_home*: in this state the robot has found a complete hypothesis, get it from the `/hypothesis` topic. To test it, the robot goes to the home position located in the center of the arena. The *check_win()* function is used to check if the id of the hypothesis found matches the winning id. If the hypothesis is correct the game ends otherwise the robot resumes the search and then goes to state 0 again
 
-[robot_vision.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_vision.py)
+[robot_vision.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_vision.py): this node implements the robot vision; in fact, it uses the robot's cameras to detect markers and obtain hints. The node is very simple because it implements 3 equal functions each dedicated to a different camera, so it will be sufficient to explain the operation of one of them. The function cam_newId() subscribes to the topic `/camera_publish/camera_found_id` to get information from the camera present on the robot and in particular to get the value of the marker that is detected by the camera. Two checks are done, it is checked that the id displayed is within the range of possible values 11 - 40 (it may happen that the camera for different reasons reads a wrong value) and it is checked that the id found has not been displayed before. Once this id is obtained it is used as an argument for the call to the `/oracle_hint` service that provides in response the hint corresponding to the marker found. It is checked whether the format of the hintis correct, and if so, the hint information is processed into a single string and publish to the `/new_hint` topic
 
 ### Src folder
 [marker_publish_camera1.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera1.cpp)
@@ -47,7 +47,7 @@ The assignment requires:
 
 [marker_publish_camera3.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera3.cpp)
 
-[simulation.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/simulation.cpp)
+[simulation.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/simulation.cpp): this node is implemented by default you can find it in the assignment package [exp_assignment3](https://github.com/CarmineD8/exp_assignment3/tree/main/src). This node implements all the simulation aspects, in particular it provides the values of the hints related to the different markers through the service `/oracle_hint` and the value of the id of the winning hypothesis with the service `/oracle_solution` 
 
 *If you need you can find a more accurate description of the nodes used in the documentation* [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
 
