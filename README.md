@@ -21,16 +21,32 @@ The assignment requires:
 
 ## Nodes
 ### Scripts folder
+[hint_armor_ass3.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/hint_armor_ass3.py)
+
+[robot_fsm.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_fsm.py)
+
+[robot_vision.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_vision.py)
 
 ### Src folder
+[marker_publish_camera1.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera1.cpp)
+
+[marker_publish_camera2.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera2.cpp)
+
+[marker_publish_camera3.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera3.cpp)
+
+[simulation.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/simulation.cpp)
 
 *If you need you can find a more accurate description of the nodes used in the documentation* [docs]
 
 ## Messages
+[NewHint](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHint.msg)
 
+[NewHyp](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHyp.msg)
 ## Services
+[Marker.srv](https://github.com/piquet8/exp_ass3/blob/main/srv/Marker.srv)
 
 ## Urdf model
+[robot.urdf](https://github.com/piquet8/exp_ass3/blob/main/urdf/robot9.urdf): this file contains the model of the robot
 
 ## UML
 ![UML_exp3](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/UML_exp3.png)
@@ -39,6 +55,7 @@ The assignment requires:
 ![states_diagram](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/blocks_diagram.png)
 
 ## Rqt-graph
+![rqt_graph](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/rqt_graph.png)
 
 # How to run the program
 ## Requirements
