@@ -78,9 +78,20 @@ The next three nodes, are a variant of this node [marker_publish.cpp](https://gi
 ## Rqt-graph
 ![rqt_graph](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/rqt_graph.png)
 
+## Extra package
+
+Within the assignment package we find the package [exp3_move](https://github.com/piquet8/exp_ass3/tree/main/exp3_move) this package was used to allow the robot arm to move however I later chose to use a strategy of not moving the arm to acquire the hints because the movement of the arm not always linear produced an incorrect reading of the markers. This package still allows for the implementation of arm movement functions should the other programmers need to change strategies and move the arm during the simulation.
+
 # How to run the program
 ## Requirements
 For run this project you will need the following packages:
+
+- **aruco_ros** that you can find here: https://github.com/CarmineD8/aruco_ros
+- **armor** you can find the installation procedure here: https://github.com/EmaroLab/armor
+- **move_base** that you can find here: https://github.com/ros-planning/navigation.git
+- **erl2** thet you can find here: https://github.com/CarmineD8/erl2.git
+
+*SUGGESTION: you should find these packages already installed in this docker workspace:* https://hub.docker.com/r/carms84/exproblab
 
 ## How to launch
 
@@ -89,6 +100,19 @@ For run this project you will need the following packages:
 git clone https://github.com/piquet8/exp_ass3.git
 ```
 After that you need to build the package in the workspace: *catkin_make --only-pkg-with-deps exp_ass3*
+
+2. Then to launch the simulation environment and relative nodes open a new shell tab and run the command:
+```
+roslaunch exp_ass3 simulation.launch
+```
+*SUGGESTION: For a cleaner terminal with no warning messages I suggest you to try to use this command to launch:*
+```
+roslaunch exp_ass3 simulation.launch 2>/dev/null
+```
+3. Finally to starts the game open a new shell tab and run the command:
+```
+rosrun exp_ass3 robot_fsm.py
+```
 
 # Video and images of the running program
 [VIDEO_DEMO](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/demo_exp3.mp4)
