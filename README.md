@@ -102,11 +102,27 @@ In this video it is possible to view a demo of the robot in action:
   - on the right of terminal instead we can see the messages related to the robot_fsm node that reports the behaviors performed by the robot such as the movements between and in the rooms, or the hypotheses found. 
 
 The video was speeded up because due to the poor performance of my pc it turned out to be particularly slow, and to also allow us to see the robot find at least one hypothesis (even if incorrect) starting from the beginning
-  
-I leave you below a screenshot taken from the video to make the explanation above clearer:
 
-[video_screen](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/video_screen.png)
-  
+## Terminal images
+
+Below I add some of the most significant screenshots produced by the terminal during the simulation:
+
+In these three images we see that the chambers have detected markers and thus found related hints. It is good to see that the markers found follow the logic of the system I have thought of in fact the camera on the end-effector finds the marker (id 36) located above the wall (camera1), the camera on the base finds the marker (id 15) located at the base of the wall (camera2), and the camera facing downwards on the inclined arm finds the marker(id 35) on the floor:
+
+![1](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/cam_1.png) 
+
+![2](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/cam_2.png) 
+
+![3](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/cam_3.png)
+
+
+Here finally we can see the screens where the robot states its hypothesis, as we can see if the hypothesis is the wrong one the robot resumes searching, if the hypothesis is the right one the game ends:
+
+![wrong](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/wrong_screen.png)
+
+![winner](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/winner_screen.png)
+
+
 
 # Working hypothesis and environment
 
