@@ -98,8 +98,15 @@ In this video it is possible to view a demo of the robot in action:
   - in the left part there are 3 panels that show the real-time images taken by the cameras mounted on the robot, 
   - in the right part you can see the robot within the map that is updated and outlined as the robot moves in the environment and a green line that represents the path planned by the robot to reach its goal. 
 - on the botton right we find the terminal on which the messages related to the simulation scroll; again we have a division into two finistries, 
-  - on the left we can see the messages produced by the robot_vision node that report: which camera has detected a marker, the value of its id and the related clue (we also find the number of clues found in total and a list containing the ids of the markers found, this helps to keep track of the collection of markers and clues and to understand if the robot vision is working efficiently), 
-  - on the right instead we can see the messages related to the robot_fsm node that reports the actions performed by the robot such as the movements between and in the rooms, or the hypotheses found. The video was speeded up because due to the poor performance of my pc it turned out to be particularly slow, and to also allow us to see the robot find at least one hypothesis (even if incorrect) starting from the beginning.
+  - on the left of terminal we can see the messages produced by the robot_vision node that report: which camera has detected a marker, the value of its id and the related clue (we also find the number of clues found in total and a list containing the ids of the markers found, this helps to keep track of the collection of markers and clues and to understand if the robot vision is working efficiently), 
+  - on the right of terminal instead we can see the messages related to the robot_fsm node that reports the behaviors performed by the robot such as the movements between and in the rooms, or the hypotheses found. 
+
+The video was speeded up because due to the poor performance of my pc it turned out to be particularly slow, and to also allow us to see the robot find at least one hypothesis (even if incorrect) starting from the beginning
+  
+I leave you below a screenshot taken from the video to make the explanation above clearer:
+
+[video_screen](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/video_screen.png)
+  
 
 # Working hypothesis and environment
 
