@@ -48,6 +48,7 @@ The project consists of 7 nodes that communicate with each other and with relate
 
 ### Src folder
 The next three nodes, are a variant of this node [marker_publish.cpp](https://github.com/CarmineD8/aruco_ros/blob/main/aruco_ros/src/marker_publish.cpp); this node is used to acquire information from the cameras on the robot; I added a publisher that publishes on the topic *camera_found_id* the id found by the *detect* function provided by the **ArUco** module. This function takes as arguments the the image containing the markers to be detected and the  the parameters that can be customized during the detection process. In this way it is sufficient to pass as an argument in the [launch](https://github.com/piquet8/exp_ass3/blob/main/launch/simulation.launch) file `/image:=/robot/camera/image_raw` with the respective camera number (camera1, camera2, camera3) to the corresponding dedicated node to receive the id of the marker detected by the camera on the topic `/camera_publish/camera_found_id`
+
 [marker_publish_camera1.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera1.cpp)
 
 [marker_publish_camera2.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/marker_publish_camera2.cpp)
