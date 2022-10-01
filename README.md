@@ -90,7 +90,16 @@ git clone https://github.com/piquet8/exp_ass3.git
 After that you need to build the package in the workspace: *catkin_make --only-pkg-with-deps exp_ass3*
 
 # Video and images of the running program
-- [VIDEO_DEMO](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/demo_exp3.mp4)
+[VIDEO_DEMO](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/demo_exp3.mp4)
+
+In this video it is possible to view a demo of the robot in action: 
+- on the left you will find the Gazebo simulation where the robot moves within the environment 
+- on the top right instead you can see the Rviz interface divided into two parts, 
+  - in the left part there are 3 panels that show the real-time images taken by the cameras mounted on the robot, 
+  - in the right part you can see the robot within the map that is updated and outlined as the robot moves in the environment and a green line that represents the path planned by the robot to reach its goal. 
+- on the botton right we find the terminal on which the messages related to the simulation scroll; again we have a division into two finistries, 
+  - on the left we can see the messages produced by the robot_vision node that report: which camera has detected a marker, the value of its id and the related clue (we also find the number of clues found in total and a list containing the ids of the markers found, this helps to keep track of the collection of markers and clues and to understand if the robot vision is working efficiently), 
+  - on the right instead we can see the messages related to the robot_fsm node that reports the actions performed by the robot such as the movements between and in the rooms, or the hypotheses found. The video was speeded up because due to the poor performance of my pc it turned out to be particularly slow, and to also allow us to see the robot find at least one hypothesis (even if incorrect) starting from the beginning.
 
 # Working hypothesis and environment
 
