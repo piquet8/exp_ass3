@@ -5,15 +5,15 @@ The hints are inside 30 ArUco markers (5 for each room) that can be placed in di
 
 When the robot, after collecting a sufficient number of hints, finds a complete and consistent hypothesis, it reaches the home position and communicates its hypothesis. If the hypothesis is the winning one, the game ends, otherwise the robot resumes the search.
 
-ARENA - from gazebo 
+MAZE - from gazebo 
 
-![ARENA](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/arena.png)
+![MAZE](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/arena.png)
 
 ## Expected Behaviour
 The robot should:
 - moving between different rooms while obviously avoiding hitting the walls
 - detect the different ArUco markers placed at different locations within the rooms to obtain hints
-- when a consistent hypothesis is deducible, it should go the center of the arena and express it in English
+- when a consistent hypothesis is deducible, it should go the center of the maze and express it in English
 - if the hypothesis is wrong, it should keep exploring and find new hints
 
 ## Features of the project
@@ -42,7 +42,7 @@ The project consists of 7 nodes that communicate with each other and with relate
 
 - **state 1** *look_aroud*: In this state the robot is in one of the rooms and here it must find the clues. In order for the robot to be able to find as many markers as possible, different behaviors have been implemented depending on the size of the rooms and the placement of the markers. For example in smaller rooms the robot rotates on itself 360 degrees using the *turn_around()* function (this function publish on the topic `/cmd_vel` an angular velocity with respect to the z-axis allowing rotation in place of the robot), in larger rooms on the other hand in addition to performing this rotation it moves to different points in the room. Again this is checked to see if the robot has found a complete hypothesis to test in order to move to state 2, if not, the robot will have to continue searching in the other rooms and then return to state 0
 
-- **state 2** *go_home*: in this state the robot has found a complete hypothesis, get it from the `/hypothesis` topic. To test it, the robot goes to the home position located in the center of the arena. The *check_win()* function is used to check if the id of the hypothesis found matches the winning id. If the hypothesis is correct the game ends otherwise the robot resumes the search and then goes to state 0 again
+- **state 2** *go_home*: in this state the robot has found a complete hypothesis, get it from the `/hypothesis` topic. To test it, the robot goes to the home position located in the center of the maze. The *check_win()* function is used to check if the id of the hypothesis found matches the winning id. If the hypothesis is correct the game ends otherwise the robot resumes the search and then goes to state 0 again
 
 [robot_vision.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_vision.py): this node implements the robot vision; in fact, it uses the robot's cameras to detect markers and obtain hints. The node is very simple because it implements 3 equal functions each dedicated to a different camera, so it will be sufficient to explain the operation of one of them. The function cam_newId() subscribes to the topic `/camera_publish/camera_found_id` to get information from the camera present on the robot and in particular to get the value of the marker that is detected by the camera. Two checks are done, it is checked that the id displayed is within the range of possible values 11 - 40 (it may happen that the camera for different reasons reads a wrong value) and it is checked that the id found has not been displayed before. Once this id is obtained it is used as an argument for the call to the `oracle_hint` service that provides in response the hint corresponding to the marker found. It is checked whether the format of the hintis correct, and if so, the hint information is processed into a single string and publish to the `/new_hint` topic
 
@@ -156,6 +156,8 @@ Here finally we can see the screens where the robot states its hypothesis, as we
 
 
 # Working hypothesis and environment
+
+For this project, I started from the assumptions of the previous assignment [exp_ass1](https://github.com/piquet8/exp_ass1), specifically the behaviors necessary for the robot to achieve the goal, which are: moving the robot to search and collect hints, processing the hints in the ontology and testing ready hypotheses, and finally testing the hypotheses found. Definitely in this project more than in the previous ones, the major concentration was given to the first aspect then to the search for hints and on the behaviors required to obtain them. Indeed, in this project the robot has to deal with a 'real' and complex environment where the hints (the markers) are never placed in the same place. This had to provide for flexible solutions with wider possibility of adaptation to changes in the surrounding environment. For moving the robot, I used the move_base module because it is a good planner for complex environments and I have used it before. For marker detection I used several expedients, I decided not to move the arm during the search because the robot is often in difficult environments such as small rooms where the movement space is relatively small and the arm movement could predict unintended collisions or misbehavior, also the acquisition of images taken from a moving camera are less reliable. Therefore, not having the arm movement to allow the robot to 'look' in different positions, I used 3 cameras placed at 3 different locations and with 3 different viewpoints: one camera is placed on the base of the robot to view markers located at the bottom, one camera is placed on the arm to view markers at the top, and one camera is placed on the robot's inclined arm to view markers located on the floor. Finally, it was sufficient to add a z-axis rotation of the robot, slow enough to avoid the previously mentioned problem on the images captured in motion, and a different room search strategy depending on the size of the room. 
 
 ## System's features
 
