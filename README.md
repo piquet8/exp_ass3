@@ -35,7 +35,7 @@ The project consists of 7 nodes that communicate with each other and with relate
 
 ## Nodes
 ### Scripts folder
-[hint_armor_ass3.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/hint_armor_ass3.py): this node implements the cluedo ontology of the robot, it takes hints from the topic */new_hint* and manages them to achieve a complete and consistent hypothesis. It's the same node of the previous assignment, you can find more information there [exp_ass1](https://github.com/piquet8/exp_ass1) (there the name of the node is hint.py)
+[hint_armor_ass3.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/hint_armor_ass3.py): this node implements the cluedo ontology of the robot, it takes hints from the topic `/new_hint` and manages them to achieve a complete and consistent hypothesis. It's the same node of the previous assignment, you can find more information there [exp_ass1](https://github.com/piquet8/exp_ass1) (there the name of the node is hint.py)
 
 [robot_fsm.py](https://github.com/piquet8/exp_ass3/blob/main/scripts/robot_fsm.py): this node implements the finite state machine that determines the behaviors of the robot during program execution. In particular, we have 3 states: 
 - **state 0** *goto_room*: in this state one of the 6 rooms in the environment is randomly chosen and this is set as the goal for the `move_base client`, every time a room is seen it is added to the list of visited rooms, in this way through a check in the list we are sure to check all rooms even if in random order, once all rooms have been seen the list is emptied. After this state we usually go to state 1, however to be on the safe side it is first checked if on the way no hypothesis was found that needs to be tested, in that case we go directly to state 2.
