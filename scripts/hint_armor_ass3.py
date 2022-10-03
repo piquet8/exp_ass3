@@ -11,7 +11,7 @@
 #  \details
 #  
 #  Subscribes to: <BR>
-#       /hint
+#       /new_hint
 #
 #  Publishes to: <BR>
 #	/hypotheis	    
