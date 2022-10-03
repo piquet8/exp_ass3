@@ -57,7 +57,7 @@ The next three nodes, are a variant of this node [marker_publish.cpp](https://gi
 
 [simulation.cpp](https://github.com/piquet8/exp_ass3/blob/main/src/simulation.cpp): this node is implemented by default you can find it in the assignment package [exp_assignment3](https://github.com/CarmineD8/exp_assignment3/tree/main/src). This node implements all the simulation aspects, in particular it provides the values of the hints related to the different markers through the service `/oracle_hint` and the value of the id of the winning hypothesis with the service `oracle_solution` 
 
-*If you need you can find a more accurate description of the nodes used in the documentation* [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
+*If you need you can find a more accurate description about the nodes implemented my myself in the documentation* [docs](https://github.com/piquet8/exp_ass3/tree/main/docs)
 
 ## Messages
 [NewHint.msg](https://github.com/piquet8/exp_ass3/blob/main/msg/NewHint.msg): this message contains the hint taken by the robot redesigned to be more readable in only one string, it is publish on the `/new_hint` topic
