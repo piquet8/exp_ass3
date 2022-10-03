@@ -132,9 +132,11 @@ The video was speeded up because due to the poor performance of my pc it turned 
 
 Below I add some of the most significant screenshots produced by the terminal during the simulation:
 
-In these two images we see the messages produced by the robot_fsm node showing the robot inside a small room and after in a big room. As we can read in the small room the robot reaches the goal point and just performs a spin on itself; in the bigger room on the other hand the robot applies different behaviors in order to have better visit the whole room, in fact it moves to four different points of the room and performs some rotations.
+In these two images we see the messages produced by the robot_fsm node showing the robot inside a small room and after in a big room. As we can read in the small room (bathroom) the robot reaches the goal point and just performs a rotation on itself; in the bigger room (living-room) instead the robot applies different behaviors in order to have better visit the whole room, in fact it moves to four different points of the room and performs some rotations.
 
-![small]()
+![small](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/small.png)
+
+![big](https://github.com/piquet8/exp_ass3/blob/main/media_exp3/big_room.png)
 
 In these three images we see that the cameras have detected markers and thus found related hints. It is good to see that the markers found follow the logic of the system I have thought of in fact the camera on the end-effector finds the marker (id 36) located above the wall (camera1), the camera on the base finds the marker (id 15) located at the base of the wall (camera2), and the camera facing downwards on the inclined arm finds the marker(id 35) on the floor:
 
